@@ -21,9 +21,7 @@ var userSchema = mongoose.Schema( {
     		type         : { },
     		default      : {
     			admin      : false,
-    			user       : true,
-          wing       : false,
-          personnel  : false,
+    			user       : true
     		}
     	}
 } );
