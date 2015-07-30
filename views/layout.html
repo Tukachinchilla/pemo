@@ -1,17 +1,26 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
-    <meta>
+    <meta charset="utf-8">
       <script src="/bower_components/webcomponentsjs/webcomponents.min.js"></script>
+      <link rel="import" href="elements.html">
       <link rel="stylesheet" href="/styles/foundation.min.css" />
       <link rel="stylesheet" href="/styles/normalize.css" />
       <link rel="stylesheet" href="/styles/styles.css" />
       <script src="/js/jquery-1.11.3.min.js"></script>
       <script src="/js/foundation.min.js"></script>
-		  {% block elements %}{% endblock %}
-      <title>{% block title %}My Site{% endblock %}</title>
+		  {% block elements %}
+        <!-- Override this block to insert route specific polymer elements.  Place common link references in the elements/elements.html file -->
+      {% endblock %}
+      <title>
+        {% block title %}
+          <!-- Override this block to manipulate the page title-->
+          My Site
+        {% endblock %}
+      </title>
   </head>
 	<body>
+    <span id="browser-sync-binding"></span>
     <nav class="top-bar" data-topbar role="navigation">
       <ul class="title-area">
         <li class="name">
@@ -22,8 +31,12 @@
       </ul>
     </nav>
     <div class="row">
-      {% block content %}{% endblock %}
+      {% block content %}
+        <!-- Override this block to display page content -->
+      {% endblock %}
     <div>
-		{% block javascripts %}{% endblock %}
+		{% block javascripts %}
+      <!-- Override this bolck to inject javascripts -->
+    {% endblock %}
   </body>
 </html>
