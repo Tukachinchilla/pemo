@@ -1,5 +1,5 @@
 var root  = require( './public' );
-//var users = require( './users' );
+var users = require( './users' );
 //var admin = require( './admin' );
 //var User  = require( '../models/user.js' );
 
@@ -38,7 +38,7 @@ module.exports = function( app, passport ) {
 	} );*/
 
 	app.use( '/', root );
-	//app.use( '/user', isLoggedIn, users );
+	app.use( '/user', isLoggedIn, users );
 	//app.use( '/admin', isLoggedIn, hasAdmin, admin );
 
 	//Handle the 404
